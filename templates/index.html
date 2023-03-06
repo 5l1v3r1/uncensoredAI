@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uncensored ChatGPT</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="chatbox">
+        <h1>Uncensored ChatGPT</h1>
+        <div class="output">
+          {% for output in outputs %}
+            <p>{{ output }}</p>
+          {% endfor %}
+        </div>
+        <form method="POST">
+          <label for="input_text">Enter some text:</label>
+          <input type="text" id="input_text" name="input_text" maxlength="100" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
